@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- AOS (Animate On Scroll) CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+   <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+  body {
+    scroll-behavior: smooth;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0268A8;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-link {
+    color: white !important;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #FFB056 !important;
+    transform: scale(1.05);
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+    color: #B1DDE9 !important;
+  }
+</style>
+<style>
+   .btn-custom {
+  background-color: #ED7F20;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-custom:hover {
+  background-color: #FFB056;
+  color: #0a0a0a;
+  transform: scale(1.05);
+}
+
+.btn-custom-small {
+  background-color: #0268A8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.btn-custom-small:hover {
+  background-color: #B1DDE9;
+  color: #0268A8;
+  transform: scale(1.05);
+}
+
+</style>
+<style>
+    /* Theme Button */
+.theme-btn {
+  background-color: #0268A8;
+  color: #fff;
+  border: 2px solid #0268A8;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.theme-btn:hover {
+  background-color: #FFB056;
+  border-color: #ED7F20;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Card Hover Effect */
+.attraction-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.attraction-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Zoom on Hover */
+.attraction-card img {
+  transition: transform 0.5s ease;
+}
+.attraction-card:hover img {
+  transform: scale(1.1);
+}
+
+</style>
+<style>
+    /* Image Zoom on Hover */
+    .image-container {
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .image-container img {
+      transition: transform 0.5s ease;
+    }
+  
+    .image-container:hover img {
+      transform: scale(1.1);
+    }
+  
+    /* Card Hover Lift & Shadow */
+    .accommodation-card,
+    .dining-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: none;
+    }
+  
+    .accommodation-card:hover,
+    .dining-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    }
+  
+    /* Badge Styling */
+    .price-badge,
+    .type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ffb056;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+  
+    .type-badge {
+      top: 40px;
+      background-color: #0268a8;
+    }
+  
+    /* Responsive Fixes */
+    @media (max-width: 767.98px) {
+      .card-body .price,
+      .card-body .btn {
+        font-size: 0.9rem;
+      }
+  
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+  
+      <!-- nav bar start -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">Travel Bliss</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="first.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="second.html">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="third.html">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fourth.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fifth.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+     <!-- nav ba rend -->
+        <!-- Hero Destination Section Start -->
+<section class="destination-hero text-white text-center d-flex align-items-center justify-content-center" style="background: url(bali\ image.jpg) center/cover no-repeat; height: 100vh;">
+    <div class="hero-overlay w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+      <h1 class="display-4 fw-bold" data-aos="fade-down" style="color: #FFB056;">Explore the Beauty of Bali</h1>
+      <p class="lead mt-3" data-aos="fade-up" style="color: #B1DDE9;">Experience the serene beaches, vibrant culture, and lush greenery.</p>
+      <a href="#destinations" class="btn btn-custom mt-4" data-aos="zoom-in">Explore Now</a>
+    </div>
+  </section>
+  <!-- Hero Destination Section End -->
+    <!-- attractions section start -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-down" style="color: #0268A8;">Top Attractions in Bali</h2>
+      <div class="row g-4">
+  
+        <!-- Attraction 1 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm attraction-card border-0">
+            <img src="uluwata temple.jpg" class="card-img-top img-fluid" alt="Uluwatu Temple">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #ED7F20;">Uluwatu Temple</h5>
+              <p class="card-text">A cliffside temple with breathtaking views of the Indian Ocean. A must-see for sunset lovers.</p>
+              <a href="#" class="btn theme-btn mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Attraction 2 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm attraction-card border-0">
+            <img src="monkey forest.jpg" class="card-img-top img-fluid" alt="Monkey Forest">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #ED7F20;">Sacred Monkey Forest</h5>
+              <p class="card-text">A tranquil forest sanctuary in Ubud, home to hundreds of playful long-tailed macaques.</p>
+              <a href="#" class="btn theme-btn mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Attraction 3 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm attraction-card border-0">
+            <img src="mount batur.jpg" class="card-img-top img-fluid" alt="Mount Batur">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #ED7F20;">Mount Batur</h5>
+              <p class="card-text">Hike up this active volcano and catch a stunning sunrise from the summit.</p>
+              <a href="#" class="btn theme-btn mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- attractions section end -->
+   <!-- accommodation start -->
+<section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-down">Best Places to Stay in Bali</h2>
+      <div class="row g-4">
+      
+        <!-- Accommodation 1 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 shadow-sm accommodation-card">
+            <div class="image-container">
+              <img src="seasons resort.avif" class="card-img-top img-fluid" loading="lazy" alt="Four Seasons Resort Jimbaran Bay luxury ocean view">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Four Seasons Resort</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <span class="ms-2">5.0</span>
+              </div>
+              <p class="card-text">Experience luxury and elegance at the Four Seasons, located in Jimbaran Bay, with stunning ocean views.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">From $450/night</span>
+                <a href="#" class="btn btn-primary btn-hover">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Accommodation 2 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 shadow-sm accommodation-card">
+            <div class="image-container">
+              <img src="alaya resort.jpg" class="card-img-top img-fluid" loading="lazy" alt="Alaya Resort Ubud boutique hotel with pool">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Alaya Resort</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+                <span class="ms-2">4.5</span>
+              </div>
+              <p class="card-text">Discover the charm of Ubud with this boutique resort offering peaceful surroundings and exceptional service.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">From $220/night</span>
+                <a href="#" class="btn btn-primary btn-hover">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Accommodation 3 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 shadow-sm accommodation-card">
+            <div class="image-container">
+              <img src="legian img.jpg" class="card-img-top img-fluid" loading="lazy" alt="The Legian Seminyak beachfront luxury villas">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">The Legian Seminyak</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <span class="ms-2">5.0</span>
+              </div>
+              <p class="card-text">Relax in style at this beachfront resort in Seminyak, offering spacious villas and world-class amenities.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">From $380/night</span>
+                <a href="#" class="btn btn-primary btn-hover">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  <!-- accommodation end -->
+  
+                 <!-- dining start -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-down">Top Dining Spots in Bali</h2>
+      <div class="row g-4">
+      
+        <!-- Dining 1 -->
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+          <div class="card h-100 shadow-sm dining-card">
+            <div class="image-container">
+              <img src="locavore img.webp" class="card-img-top img-fluid" loading="lazy" alt="Locavore restaurant modern Indonesian cuisine">
+              <div class="price-badge">$$$</div>
+              <div class="type-badge"><i class="fas fa-utensils me-1"></i> Fine Dining</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Locavore <span class="rating"><i class="fas fa-star"></i> 4.8</span></h5>
+              <div class="cuisine-tags mb-2">
+                <span class="badge bg-light text-dark">Modern Indonesian</span>
+                <span class="badge bg-light text-dark">Tasting Menu</span>
+              </div>
+              <p class="card-text">Experience world-class Indonesian cuisine with a modern twist at Locavore in Ubud.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="location">
+                  <i class="fas fa-map-marker-alt text-primary"></i> Ubud
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-hover">
+                  Explore <i class="fas fa-chevron-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Dining 2 -->
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="card h-100 shadow-sm dining-card">
+            <div class="image-container">
+              <img src="mosaic img.avif" class="card-img-top img-fluid" loading="lazy" alt="Mozaic Restaurant French-Indonesian fusion">
+              <div class="price-badge">$$$$</div>
+              <div class="type-badge"><i class="fas fa-wine-glass-alt me-1"></i> Gourmet</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mozaic Restaurant <span class="rating"><i class="fas fa-star"></i> 4.9</span></h5>
+              <div class="cuisine-tags mb-2">
+                <span class="badge bg-light text-dark">French-Indonesian</span>
+                <span class="badge bg-light text-dark">Wine Pairing</span>
+              </div>
+              <p class="card-text">A fine-dining experience blending French and Indonesian flavors in Ubud.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="location">
+                  <i class="fas fa-map-marker-alt text-primary"></i> Ubud
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-hover">
+                  Explore <i class="fas fa-chevron-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Dining 3 -->
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+          <div class="card h-100 shadow-sm dining-card">
+            <div class="image-container">
+              <img src="sundara img.jpeg" class="card-img-top img-fluid" loading="lazy" alt="Sundara beachfront restaurant Jimbaran Bay">
+              <div class="price-badge">$$</div>
+              <div class="type-badge"><i class="fas fa-cocktail me-1"></i> Beach Club</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Sundara <span class="rating"><i class="fas fa-star"></i> 4.7</span></h5>
+              <div class="cuisine-tags mb-2">
+                <span class="badge bg-light text-dark">International</span>
+                <span class="badge bg-light text-dark">Seafood</span>
+              </div>
+              <p class="card-text">A stunning beachfront restaurant offering a variety of international dishes and cocktails at Jimbaran Bay.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="location">
+                  <i class="fas fa-map-marker-alt text-primary"></i> Jimbaran
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-hover">
+                  Explore <i class="fas fa-chevron-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  <!-- dining end -->
+ 
+  
+  
+  
+      <!-- footer start -->
+  <footer class="text-white pt-4" style="background-color: #ED7F20;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Travel Bliss</h5>
+          <p>Explore the world with us! Your perfect trip is just a click away.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#destinations" class="text-white text-decoration-none">Destinations</a></li>
+            <li><a href="#packages" class="text-white text-decoration-none">Packages</a></li>
+            <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contact Us</h5>
+          <p>Email: info@travelbliss.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p>Location: Main Street, Your City</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 pb-3" style="background-color: #FFB056;">
+        <p class="mb-0 text-dark">&copy; 2025 Travel Bliss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+    <!-- footer end -->
+      <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
