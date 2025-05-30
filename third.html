@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- AOS (Animate On Scroll) CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+  body {
+    scroll-behavior: smooth;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0268A8;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-link {
+    color: white !important;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #FFB056 !important;
+    transform: scale(1.05);
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+    color: #B1DDE9 !important;
+  }
+</style>
+     
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .featured-packages-section {
+      background-color: #B1DDE9;
+      padding: 60px 0;
+    }
+
+    .featured-packages-section h2 {
+      color: #0268A8;
+      font-weight: 700;
+    }
+
+    .package-card {
+      border: none;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      background-color: #fff;
+      border-radius: 12px;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .package-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .package-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .package-title {
+      font-size: 1.2rem;
+      color: #0268A8;
+      font-weight: 600;
+    }
+
+    .package-description {
+      font-size: 0.95rem;
+      color: #444;
+      margin: 10px 0;
+    }
+
+    .package-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ED7F20;
+    }
+
+    .btn-primary {
+      background-color: #FFB056;
+      border: none;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #ED7F20;
+      color: #fff;
+    }
+
+    @media (max-width: 576px) {
+      .package-card img {
+        height: 180px;
+      }
+    }
+  </style>
+      <style>
+        body, html {
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', sans-serif;
+        }
+    
+        .hero-section {
+          position: relative;
+          background: linear-gradient(to bottom right, #0268A8, #B1DDE9);
+          background-image: url(bali\ travel\ pkg..webp); /* Replace with your background image */
+          background-size: cover;
+          background-position: center;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-align: center;
+          padding: 40px 20px;
+        }
+    
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 1;
+        }
+    
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+        }
+    
+        .hero-heading {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #FFB056;
+          transition: color 0.3s ease;
+        }
+    
+        .hero-heading:hover {
+          color: #ED7F20;
+        }
+    
+        .hero-subheading {
+          font-size: 1.2rem;
+          color: #fff;
+          margin-top: 15px;
+          transition: transform 0.3s ease;
+        }
+    
+        .hero-subheading:hover {
+          transform: scale(1.05);
+          color: #B1DDE9;
+        }
+    
+        @media (min-width: 768px) {
+          .hero-heading {
+            font-size: 3.5rem;
+          }
+    
+          .hero-subheading {
+            font-size: 1.5rem;
+          }
+        }
+      </style>
+         <!-- CSS Styling -->
+<style>
+    /* Package Categories */
+    .package-categories {
+      background-color: #B1DDE9;
+      padding: 60px 20px;
+      margin-top: 40px;
+    }
+  
+    .package-categories h2 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #0268A8;
+      margin-bottom: 20px;
+    }
+  
+    .package-categories p {
+      font-size: 18px;
+      color: #0a0f1c;
+      margin-bottom: 40px;
+    }
+  
+    .categories-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+  
+    .category-item {
+      background-color: #FFB056;
+      border-radius: 8px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+  
+    .category-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    .category-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+  
+    .category-item img:hover {
+      transform: scale(1.1);
+    }
+  
+    .category-item h3 {
+      color: #0268A8;
+      font-size: 22px;
+      margin-top: 15px;
+    }
+  
+    .category-item p {
+      color: #0a0f1c;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .categories-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .category-item {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .category-item {
+        width: 100%;
+      }
+    }
+  </style>
+  <style>
+    /* Best Deals Section */
+    .best-deals {
+      background-color: #B1DDE9;
+      padding: 60px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+  
+    .best-deals h2 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #0268A8;
+      margin-bottom: 20px;
+    }
+  
+    .section-description {
+      font-size: 18px;
+      color: #0a0f1c;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+  
+    .deal-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+  
+    .deal-card {
+      background-color: #FFB056;
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+  
+    .deal-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    .deal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+  
+    .deal-img:hover {
+      transform: scale(1.1);
+    }
+  
+    .deal-card h3 {
+      font-size: 24px;
+      color: #0268A8;
+      margin-top: 15px;
+    }
+  
+    .deal-card p {
+      font-size: 16px;
+      color: #0a0f1c;
+      margin-top: 10px;
+    }
+  
+    .price {
+      font-size: 18px;
+      color: #ED7F20;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+    .book-now {
+      background-color: #0268A8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+  
+    .book-now:hover {
+      background-color: #FFB056;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .deal-container {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .deal-card {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .deal-card {
+        width: 100%;
+      }
+    }
+  </style>
+  <style>
+    /* Customer Reviews Section */
+#reviews {
+    background-color: #B1DDE9;
+    padding: 40px;
+    text-align: center;
+}
+
+#reviews h2 {
+    color: #0268A8;
+    font-size: 2rem;
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-img {
+    width: 100%;
+    height: auto;
+}
+
+.review-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.review-content h3 {
+    color: #ED7F20;
+    font-size: 1.2rem;
+}
+
+.star-rating {
+    color: #FFB056;
+    font-size: 1.1rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+}
+
+/* FAQ Section */
+#faq {
+    background-color: #FFB056;
+    padding: 40px;
+    text-align: center;
+}
+
+#faq h2 {
+    color: #0268A8;
+    font-size: 2rem;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.faq-item {
+    background-color: #fff;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #0268A8;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #0268A8;
+    color: #fff;
+}
+
+.faq-answer {
+    display: none;
+    padding-top: 10px;
+    color: #555;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-question {
+    color: #ED7F20;
+}
+
+/* Hover and animation for FAQ items */
+.faq-item {
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+}
+
+.faq-item.open {
+    transform: scale(1.05);
+}
+
+/* Review Form */
+#review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#review-form input, #review-form textarea, #review-form select {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+#review-form button {
+    background-color: #0268A8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#review-form button:hover {
+    background-color: #ED7F20;
+}
+
+  </style>
+ 
+          <!-- nab bar start -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">Travel Bliss</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="second.html">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="third.html">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fourth.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fifth.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+       <!-- nav bar end -->
+          <!-- Hero Section start -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Discover Our Exclusive Travel Packages</h1>
+      <p class="hero-subheading">Explore the world with our specially curated travel packages</p>
+    </div>
+  </section>
+  <!-- Hero Section end -->
+  <!-- Featured Packages Section -->
+  <section class="featured-packages-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Featured Travel Packages</h2>
+      <div class="row g-4">
+
+        <!-- Package 1 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card package-card">
+            <img src="advancure pkg.jpg" alt="Package 1">
+            <div class="card-body">
+              <h5 class="package-title">Bali Adventure Package</h5>
+              <p class="package-description">Explore Bali’s natural beauty with a combination of adventure and relaxation.</p>
+              <p class="package-price">$799</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card package-card">
+            <img src="mountain advanture.jpg" alt="Package 2">
+            <div class="card-body">
+              <h5 class="package-title">Mountain Adventure</h5>
+              <p class="package-description">Explore the majestic mountains with hiking trails and breathtaking views.</p>
+              <p class="package-price">$899</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="card package-card">
+            <img src="cultureal tour.jpg" alt="Package 3">
+            <div class="card-body">
+              <h5 class="package-title">Cultural Discovery Tour</h5>
+              <p class="package-description">Discover the rich culture and history of ancient cities with guided tours.</p>
+              <p class="package-price">$499</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card package-card">
+            <img src="luxury cruise img.jpg" alt="Package 4">
+            <div class="card-body">
+              <h5 class="package-title">Luxury Cruise</h5>
+              <p class="package-description">Set sail on a luxurious cruise with top-notch amenities and scenic ocean views.</p>
+              <p class="package-price">$1299</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="card package-card">
+            <img src="safari expedition.jpg" alt="Package 5">
+            <div class="card-body">
+              <h5 class="package-title">Safari Expedition</h5>
+              <p class="package-description">Experience the thrill of a safari in Africa, with guided wildlife tours.</p>
+              <p class="package-price">$1199</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="card package-card">
+            <img src="europe gateway.webp" alt="Package 6">
+            <div class="card-body">
+              <h5 class="package-title">European Getaway</h5>
+              <p class="package-description">Visit iconic European cities and enjoy cultural experiences with a luxurious touch.</p>
+              <p class="package-price">$1499</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+            <!-- Package Categories Section -->
+<section class="package-categories" id="categories">
+    <h2 style="text-align: center; color: #0268A8;">Choose Your Package</h2>
+    <p style="text-align: center; color: #0a0f1c;">Explore our exciting vacation packages that cater to all your travel needs!</p>
+    <div class="categories-list">
+        <!-- Adventure Package -->
+        <div class="category-item">
+            <img src="advancure pkg.jpg" alt="Adventure" class="category-img">
+            <h3>Adventure</h3>
+            <p>For thrill-seekers who love nature and excitement, with everything from mountain treks to desert safaris.</p>
+        </div>
+        <!-- Luxury Package -->
+        <div class="category-item">
+            <img src="luxury img.webp" alt="Luxury" class="category-img">
+            <h3>Luxury</h3>
+            <p>Indulge in a 5-star experience with world-class amenities and exquisite accommodations.</p>
+        </div>
+        <!-- Family Package -->
+        <div class="category-item">
+            <img src="family pkg.jpeg" alt="Family" class="category-img">
+            <h3>Family</h3>
+            <p>Perfect for family vacations with a mix of relaxation and fun activities for all ages.</p>
+        </div>
+        <!-- Additional categories can be added similarly -->
+    </div>
+  </section>
+                  <!-- Best Deals Section start-->
+<section id="best-deals" class="best-deals">
+    <h2>Top Travel Deals</h2>
+    <p class="section-description">Explore our best deals and exclusive offers to make your dream vacation come true.</p>
+    <div class="deal-container">
+      <!-- Deal 1 -->
+      <div class="deal-card">
+        <img src="bali beach images....jpg" alt="Beautiful Bali" class="deal-img">
+        <h3>Beautiful Bali - 50% Off</h3>
+        <p>Escape to Bali and enjoy a luxurious 7-day vacation for half the price. Includes hotel, flights, and tours.</p>
+        <p class="price">Was $2000, Now $1000</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <!-- Deal 2 -->
+      <div class="deal-card">
+        <img src="paris images.webp" alt="Romantic Paris" class="deal-img">
+        <h3>Romantic Paris Getaway</h3>
+        <p>Experience the magic of Paris with a 5-day trip. Includes Eiffel Tower tickets, city tours, and more.</p>
+        <p class="price">Was $1500, Now $1200</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <!-- Deal 3 -->
+      <div class="deal-card">
+        <img src="tokyo japan.jpg" alt="Discover Japan" class="deal-img">
+        <h3>Discover Japan - 40% Off</h3>
+        <p>Explore the beauty of Japan, from Tokyo to Kyoto. Get exclusive discounts on flights and accommodation.</p>
+        <p class="price">Was $1800, Now $1080</p>
+        <button class="book-now">Book Now</button>
+      </div>
+    </div>
+  </section>
+  <!-- Best Deals Section end -->
+
+           <!-- Customer Reviews Section start-->
+<section id="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review-container">
+        <!-- Review 1 -->
+        <div class="review-card">
+            <img src="customer1.jpg" alt="img" class="review-img">
+            <div class="review-content">
+                <h3>Sarah L.</h3>
+                <div class="star-rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                </div>
+                <p class="review-text">"The Bali trip was amazing! The team at [Travel Agency] made everything seamless. From booking flights to arranging tours, they took care of it all!"</p>
+            </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="review-card">
+            <img src="customer2.jpg" alt="img" class="review-img">
+            <div class="review-content">
+                <h3>James & Emily W.</h3>
+                <div class="star-rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+                <p class="review-text">"Our honeymoon in Paris was perfect! The itinerary was well-planned, and every detail exceeded our expectations. Highly recommend!"</p>
+            </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="review-card">
+            <img src="customer3.jpg" alt="img" class="review-img">
+            <div class="review-content">
+                <h3>Alex R.</h3>
+                <div class="star-rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>
+                </div>
+                <p class="review-text">"Our Japan tour was fantastic! The guides were knowledgeable, and the food, culture, and scenery were unforgettable!"</p>
+            </div>
+        </div>
+    </div>
+    <br> <br>
+    <!-- Review Submission Form -->
+    <h3 style="text-align: center;">Submit Your Review</h3>
+    <form id="review-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="review-text" placeholder="Your Review" required></textarea>
+        <div>
+            <label for="rating">Rating: </label>
+            <select id="rating" required>
+                <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734;</option>
+                <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734;</option>
+                <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
+                <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
+            </select>
+        </div>
+        <button type="submit">Submit Review</button>
+    </form>
+</section>
+<!-- Customer Reviews Section end-->
+
+<!-- FAQs Section start-->
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+            <button class="faq-question">What are the best travel destinations for families?</button>
+            <div class="faq-answer">
+                <p>Some of the best family-friendly destinations include Orlando, Florida for its theme parks, Paris for its museums and culture, and Bali for a combination of relaxation and adventure.</p>
+            </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+            <button class="faq-question">How do I book a trip through your website?</button>
+            <div class="faq-answer">
+                <p>Booking a trip is easy! Simply browse through our available destinations, choose the package that fits your needs, and follow the booking process. If you need assistance, our team is here to help!</p>
+            </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+            <button class="faq-question">Do you offer customized travel packages?</button>
+            <div class="faq-answer">
+                <p>Yes, we offer customized travel packages tailored to your interests and preferences. Our travel consultants will work with you to design your perfect vacation.</p>
+            </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+            <button class="faq-question">What should I pack for a beach vacation?</button>
+            <div class="faq-answer">
+                <p>For a beach vacation, make sure to pack sunscreen, swimwear, sunglasses, a hat, and a comfortable pair of sandals. Don't forget a light jacket for cooler evenings!</p>
+            </div>
+        </div>
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+            <button class="faq-question">Can I cancel my booking?</button>
+            <div class="faq-answer">
+                <p>Yes, you can cancel your booking, but cancellation policies may vary depending on the destination and package. Be sure to check the terms and conditions before booking.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQs Section end-->
+        <!-- footer start -->
+  <footer class="text-white pt-4" style="background-color: #ED7F20;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Travel Bliss</h5>
+          <p>Explore the world with us! Your perfect trip is just a click away.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#destinations" class="text-white text-decoration-none">Destinations</a></li>
+            <li><a href="#packages" class="text-white text-decoration-none">Packages</a></li>
+            <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contact Us</h5>
+          <p>Email: info@travelbliss.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p>Location: Main Street, Your City</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 pb-3" style="background-color: #FFB056;">
+        <p class="mb-0 text-dark">&copy; 2025 Travel Bliss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+    <!-- footer end -->
+     
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
