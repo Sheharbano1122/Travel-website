@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- AOS (Animate On Scroll) CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+   <!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Library CSS & JS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS Animate On Scroll -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<style>
+  body {
+    scroll-behavior: smooth;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0268A8;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-link {
+    color: white !important;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #FFB056 !important;
+    transform: scale(1.05);
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+    color: #B1DDE9 !important;
+  }
+</style>
+      <!-- Bootstrap Carousel CSS Fix -->
+<style>
+    #heroCarousel .carousel-inner {
+      height: 100vh;
+    }
+  
+    #heroCarousel .carousel-item {
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+    }
+  
+     #heroCarousel .carousel-caption {
+  background: rgba(2, 104, 168, 0.6); /* #0268A8 overlay */
+  padding: 30px;
+  border-radius: 15px;
+  color: #fff; /* Missing semicolon fixed */
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #B1DDE9; /* This will override #fff */
+}
+
+    @media (max-width: 768px) {
+      #heroCarousel h1 {
+        font-size: 2rem;
+      }
+  
+      #heroCarousel p {
+        font-size: 1rem;
+      }
+  
+      #heroCarousel .carousel-caption {
+        padding: 15px;
+      }
+    }
+  
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #ED7F20; /* orange arrows */
+      border-radius: 50%;
+      padding: 10px;
+    }
+  </style>
+    <!-- Theme Styles for Cards -->
+<style>
+    #cards {
+      background-color: #f9f9f9;
+    }
+  
+    #cards h2 {
+      color: #0268A8;
+      font-weight: bold;
+    }
+  
+    .card {
+      border: 2px solid #B1DDE9;
+      box-shadow: 0 4px 8px rgba(2, 104, 168, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(2, 104, 168, 0.4);
+    }
+  
+    .card-title {
+      color: #ED7F20;
+      font-weight: 600;
+    }
+  
+    .card-text {
+      color: #333;
+    }
+  
+    .btn-primary {
+      background-color: #FFB056;
+      border: none;
+    }
+  
+    .btn-primary:hover {
+      background-color: #ED7F20;
+    }
+  </style>
+     <style>
+        /* Theme Colors */
+body {
+  
+  color: #f5f5dc; /* beige */
+}
+.text-golden {
+  color: goldenrod;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+.image-container:hover img {
+  transform: scale(1.1);
+}
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.6);
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 12px;
+}
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+.overlay-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 1rem;
+  }
+}
+
+     </style>
+     <!-- nab bar start -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">Travel Bliss</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="second.html">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="third.html">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fourth.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fifth.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      <!-- nab bar end -->
+         <!-- Hero Section Start -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+  
+      <!-- Carousel Item 1 -->
+      <div class="carousel-item active" style="background-image: url('images.avif');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Explore The World with Us!</h1>
+          <p>"Set out in search of beautiful destinations and gain new experiences.  
+          The journey is not just about reaching a destination, but about creating memories!"</p>
+        </div>
+      </div>
+  
+      <!-- Carousel Item 2 -->
+      <div class="carousel-item" style="background-image: url('images3.avif');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Your Adventure Begins Here!</h1>
+          <p>"New city, new people, and new paths—embark on a journey  
+          that you'll remember for a lifetime. Let’s explore the world in our own style!"</p>
+        </div>
+      </div>
+  
+      <!-- Carousel Item 3 -->
+      <div class="carousel-item" style="background-image: url('images4.avif');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Discover Hidden Gems!</h1>
+          <p>"Every place has its own story. Discover the hidden beautiful  
+          views and colors of the world and be a part of a new journey."</p>
+        </div>
+      </div>
+  
+      <!-- Carousel Item 4 -->
+      <div class="carousel-item" style="background-image: url('images2.avif');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Dream. Explore. Discover</h1>
+          <p>"Travel is not just about reaching a destination, but a way to create  
+          new experiences and memories. Where will your next journey take you?"</p>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Carousel Controls -->
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+  <!-- Hero Section End -->
+      <!-- Cards Section Start -->
+<section id="cards" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">Our Popular Destinations</h2>
+      <div class="row">
+        
+        <!-- Loop for Each Card -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card">
+            <img src="destination img.jpg" class="card-img-top" alt="Destination 1">
+            <div class="card-body">
+              <h5 class="card-title">Beach Getaways</h5>
+              <p class="card-text">Relax by the ocean with soft sands and calming waves. Perfect for sunbathing, water sports, and coastal adventures.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card">
+            <img src="destination img2.jpg" class="card-img-top" alt="Destination 2">
+            <div class="card-body">
+              <h5 class="card-title">Mountain Retreats</h5>
+              <p class="card-text">Escape to the mountains for a refreshing break, where the crisp, fresh air rejuvenates your senses. With numerous hiking trails.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <img src="destination img4.jpg" class="card-img-top" alt="Destination 3">
+            <div class="card-body">
+              <h5 class="card-title">City Escapes</h5>
+              <p class="card-text">Explore vibrant city life with endless attractions, dining, and culture. Great for shopping, sightseeing, and nightlife.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card">
+            <img src="des imggggg.jpg" class="card-img-top" alt="Destination 4">
+            <div class="card-body">
+              <h5 class="card-title">Cultural Hotspots</h5>
+              <p class="card-text">Immerse yourself in history and traditions. Visit museums, ancient sites, and local festivals to experience new cultures.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card">
+            <img src="luxury escapes......jpg" class="card-img-top" alt="Destination 5">
+            <div class="card-body">
+              <h5 class="card-title">Luxury Escapes</h5>
+              <p class="card-text">Imagine being whisked away to a private island, where the only sounds are the gentle lapping of the waves against.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <img src="wildlife expeditions.jpg" class="card-img-top" alt="Destination 6">
+            <div class="card-body">
+              <h5 class="card-title">Wildlife Expeditions</h5>
+              <p class="card-text">A Wildlife Expedition is a journey like no other, where the raw beauty of nature and the thrill of discovery.</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- Cards Section End -->
+     <!-- images start -->
+     <div class="container my-5">
+        <h2 class="text-center mb-4 text-golden">Explore Our Travel & Tourism Destinations</h2>
+        <div class="row">
+          
+          <!-- Destination Cards -->
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="beach image.jpg" alt="Destination 1">
+              <div class="image-overlay">
+                <div class="overlay-text">Beautiful Beach</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="mountain img.jpg" alt="Destination 2">
+              <div class="image-overlay">
+                <div class="overlay-text">Mountain View</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="city scape.PNG" alt="Destination 3">
+              <div class="image-overlay">
+                <div class="overlay-text">Cityscape</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="safari img.jpg" alt="Destination 4">
+              <div class="image-overlay">
+                <div class="overlay-text">Desert Safari</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="historical img.jpg" alt="Destination 5">
+              <div class="image-overlay">
+                <div class="overlay-text">Historical Monument</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
+            <div class="image-container">
+              <img src="island img.....avif" alt="Destination 6">
+              <div class="image-overlay">
+                <div class="overlay-text">Tropical Island</div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+                <!-- images end  -->
+          <!-- Testimonials Section Start -->
+<section id="testimonials" class="py-5" style="background-color: #B1DDE9;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0268A8;">What Our Clients Say</h2>
+      <div class="row">
+        
+        <!-- Testimonial 1 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <img src="john doe img.jpg" alt="Client 1" class="img-fluid rounded-circle mb-4" style="width: 80px; height: 80px;">
+              <p class="card-text">"A truly unforgettable journey. The team took care of every detail, from the perfect hotel to the best sightseeing spots. Highly recommended!"</p>
+              <h5 class="card-title" style="color: #ED7F20;">John Doe</h5>
+              <p>Traveler</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Testimonial 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <img src="sarah smith img.jpg" alt="Client 2" class="img-fluid rounded-circle mb-4" style="width: 80px; height: 80px;">
+              <p class="card-text">"I had an amazing time on my trip. The personalized tour plan was perfect for my family. We can't wait to travel again!"</p>
+              <h5 class="card-title" style="color: #ED7F20;">Sarah Smith</h5>
+              <p>Family Traveler</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Testimonial 3 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <img src="micheal lee img.jpg" alt="Client 3" class="img-fluid rounded-circle mb-4" style="width: 80px; height: 80px;">
+              <p class="card-text">"The trip was a dream come true. Everything was organized perfectly. I will definitely book again for my next adventure."</p>
+              <h5 class="card-title" style="color: #ED7F20;">Michael Lee</h5>
+              <p>Adventure Enthusiast</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section End -->
+         <!-- footer start -->
+  <footer class="text-white pt-4" style="background-color: #ED7F20;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Travel Bliss</h5>
+          <p>Explore the world with us! Your perfect trip is just a click away.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#destinations" class="text-white text-decoration-none">Destinations</a></li>
+            <li><a href="#packages" class="text-white text-decoration-none">Packages</a></li>
+            <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contact Us</h5>
+          <p>Email: info@travelbliss.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p>Location: Main Street, Your City</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 pb-3" style="background-color: #FFB056;">
+        <p class="mb-0 text-dark">&copy; 2025 Travel Bliss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+       <!-- footer end -->
+     <!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+      <!-- Initialize AOS -->
+<script>
+    AOS.init();
+  </script>
+</body>
+</html>
